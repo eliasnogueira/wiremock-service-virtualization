@@ -1,0 +1,18 @@
+{
+    "name": "Check deposit request",
+    "priority": 2,
+    "request": {
+       "url": "/api/v1/check",
+       "method": "POST",
+       "bodyPatterns": [{
+         "matchesJsonPath" : "$[?(@.field2 =~ /.*/)]"
+       }]
+    },
+    "response": {
+       "status": 404,
+       "bodyFileName": "micro-deposit-send-not-found-response.json",
+       "headers": {
+          "Content-Type": "application/json"
+       }
+    }
+  }

@@ -1,0 +1,22 @@
+{
+  "name": "Check deposit request",
+  "priority": 1,
+  "request": {
+     "url": "/api/v1/check",
+     "method": "POST",
+     "bodyPatterns": [
+        {
+           "equalToJson": {
+              "iban": "NL13ABNA8672131290"
+           }
+        }
+     ]
+  },
+  "response": {
+     "status": 201,
+     "bodyFileName": "micro-deposit-send-sucessful-response.json",
+     "headers": {
+        "Content-Type": "application/json"
+     }
+  }
+}

@@ -1,0 +1,23 @@
+{
+	"name": "Verify deposit request",
+	"request": {
+	   "method": "POST",
+	   "urlPathPattern": "/api/v1/verify",
+	   "bodyPatterns": [{
+			"equalToJson": {
+				"id": "b3e3541fd0577426d1d190cfc04d4d00",
+				"deposits": {
+					"first": 0.06,
+					"second": 0.10
+				}
+			}
+		}]
+	},
+	"response": {
+	   "status": 201,
+	   "bodyFileName": "micro-deposit-verification-successful-response.json",
+	   "headers": {
+		  "Content-Type": "application/json"
+	   }
+	}
+ }

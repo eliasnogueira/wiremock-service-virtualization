@@ -1,0 +1,15 @@
+version: '3.7'
+       
+services:
+  wiremock:
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+    image: wiremock-custom
+    container_name: wiremock-payment-gateway
+    ports:
+      - "80:80"
+    volumes:
+      #we copy our scripts onto the container
+      - ./__files:/wiremock/__files
+      - ./mappings:/wiremock/mappings
